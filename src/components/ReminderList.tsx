@@ -7,9 +7,10 @@ import Reminder from '../models/reminder';
 // Creating an interface to define the shape of props.
 interface ReminderListProps {
   items: Reminder[];
+  onRemoveReminder: (id: number) => void;
 }
 
-function ReminderList({ items }: ReminderListProps) {
+function ReminderList({ items, onRemoveReminder }: ReminderListProps) {
   return (
     <div>
       {/* 
@@ -20,6 +21,12 @@ function ReminderList({ items }: ReminderListProps) {
         {items.map((item) => (
           <li className="list-group-item" key={item.id}>
             {item.title}
+            <button
+              onClick={() => onRemoveReminder(item.id)}
+              className="btn btn-outline-danger mx-2 rounded-pill"
+            >
+              Delete
+            </button>
           </li>
         ))}
       </ul>
