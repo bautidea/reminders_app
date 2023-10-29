@@ -16,9 +16,11 @@ function ReminderList({ items }: ReminderListProps) {
       Im going to return an Unordered List and then im going to map each item in the list of reminders
       to a list item 
     */}
-      <ul>
+      <ul className="list-group">
         {items.map((item) => (
-          <li key={item.id}>{item.title}</li>
+          <li className="list-group-item" key={item.id}>
+            {item.title}
+          </li>
         ))}
       </ul>
     </div>
