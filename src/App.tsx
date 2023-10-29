@@ -5,6 +5,7 @@ import ReminderList from './components/ReminderList';
 import Reminder from './models/reminder';
 import reminderService from './services/reminder';
 import { log } from 'console';
+import NewReminder from './components/NewReminder';
 
 function App() {
   // Im going to use state hooks to properly store our reminders in the app component.
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <div className="App">
+      <NewReminder />
       <ReminderList items={reminders} onRemoveReminder={removeReminder} />
     </div>
   );
